@@ -15,9 +15,9 @@
 
 # ALGORYTM:
 '''
-    Wykorzystujemy fakt, że tablica nie jest posortowana, by uzyskać złożoność liniową względem liczby
+    Wykorzystujemy fakt, że tablica jest posortowana, by uzyskać złożoność liniową względem liczby
     elementów, bez wykorzystania dodatkowej pamięci. Po prostu poruszamy się jednocześnie od początku i końca tablicy
-    dwoma indeksami i oraz j.
+    dwoma indeksami i oraz j, odpowiednio modyfikując liczbę unikatowych wystąpień elementów.
 '''
 
 def count(arr) :
