@@ -59,8 +59,7 @@ def points(g):
                 visited[ngh]=True
                 DFSvisit(ngh)
 
-                # przy powrocie rekurencji  (gdy już odwiedzimy wszystkie
-                #  dzieci) sprawdzamy czy poniżej była jakaś krawędź wsteczna 
+                # przy powrocie rekurencji sprawdzamy czy poniżej była jakaś krawędź wsteczna 
                 low[u]=min(low[u],low[ngh])
 
                 if parents[u] is None and  children >= 2 :
