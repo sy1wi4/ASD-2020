@@ -4,14 +4,14 @@
     1.  korzeń drzewa DFS jest punktem artykulacji wtw gdy ma co najmniej dwoje dzieci
     2.  jeśli v nie jest korzeniem w drzewie DFS, v jest punktem artukulacji wtw
         gdy ma co najmniej jednego syna i dla conajmniej jednego syna nie istnieje krawędź
-        wsteczna {x,y} taka,  x - potomek syna, y - przodek x
+        wsteczna {x,y} taka, że  x - potomek syna, y - przodek x
 
     ALGORYTM:
     
     Uruchamiamy DFS i obliczamy low (jak w przypadku mostów).
     Jeśli korzeń ma więcej niż jednego syna to jest pkt-em art.
     Jeśli v ma syna takiego, że low(u) >= d(v) (czyli syn v nie laczy sie z czyms nad v
-    lub nim samym, a co za tym idzie, usunięcie v nie spowoduje rozspójnienia grafu),
+    lub nim samym, a co za tym idzie, usunięcie v spowoduje rozspójnienie grafu),
     tzn. że v jest pkt-em art.
 '''
 
