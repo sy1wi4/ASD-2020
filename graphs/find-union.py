@@ -28,4 +28,4 @@ def union(x,y):
 
     else :
         x.parent=y
-        y.rank+=1    # po złączeniu drzew o tych samych rozmiarach zwiększamy rozmiar o 1
+        y.rank+=1    # po złączeniu drzew o tych samych rozmiarach zwiększamy wysokość o 1
