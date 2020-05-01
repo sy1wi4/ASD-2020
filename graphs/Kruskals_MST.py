@@ -2,14 +2,14 @@
 
 # algorytm polega na posortowaniu krawędzi w porządku niemalejącym, następnie kolejno każdą krawędź 
 # próbujemy dołożyć do minimalnego drzewa rozpinającego, warunkiem jest to, że nie może ona tworzyć
-# cyklu z już istniejącym MST - sorawdzamy to używając struktury zbiorów rozłacznych FIND-UNION
+# cyklu z już istniejącym MST - sprawdzamy to używając struktury zbiorów rozłacznych FIND-UNION
 
 # Find/Union
 class Node:
     def __init__(self,id):
         self.id=id
         self.parent=self    # na poczatku mamy zbiory jednoelementowe, wiec jako rodzic el. wskauja samych siebie  
-        self.rank=0         # wysokkosc drzewa
+        self.rank=0         # wysokosc drzewa
 
 # zwraca rerezentanta zbioru zawierajacego x
 def find_set(x) :
