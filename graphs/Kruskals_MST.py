@@ -43,6 +43,7 @@ class Graph:
 
     def add_edge(self,v,u,weight): # krawedz z v do u
         self.arr[v].append((u,weight))
+        self.arr[u].append((v,weight))
         self.edges.append((weight,v,u))
         
 
