@@ -10,6 +10,6 @@ Zakładamy reprezentację macierzową
 # po przejrzeniu wszystkich krawędzi w ten sposób mamy cykl o minimalnej wadze
 # O(E^2 * logV)
 
-# GRAF GĘSTY - dla każdej pary wierzchołków szukamy sumy wag krawędzi z u do v i z v do u,
-# bierzemy najmniejszą
+# GRAF GĘSTY - dla każdej pary wierzchołków szukamy sumy najkrótszych ścieżek z u do v 
+# oraz z v do u, bierzemy najmniejszą sumę
 # O(V^3)
