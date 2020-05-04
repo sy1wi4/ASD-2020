@@ -1,3 +1,6 @@
+# to tak naprawdę algorytm Edmondsa-Karpa -> używa BFSa
+# do szukania ścieżek, lecz opiera się na metodzie Forda-Fulkersona
+
 # idea algortymu Forda-Fulkersona polega na zwiększaniu wartości 
 # przepływu dopóki istnieje ścieżka z s do t (w sieci rezydualnej -
 # należą do niej te krawędzi, których przepustowość rezydualna jest
