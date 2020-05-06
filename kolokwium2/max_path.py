@@ -62,7 +62,7 @@ def find_max_path(g,s,t):
     for i in range(g.size):
         sets.append(Node(i))
 
-    # sortujemy krawędzi niemalejąco
+    # sortujemy krawędzi nierosnąco
     g.edges=sorted(g.edges)[::-1]    
 
     # kolejno bierzemy krawędzi i wierzchołki do niej należace łączymy w jeden zbiór przy pomocy union,
