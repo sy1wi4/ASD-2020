@@ -117,13 +117,7 @@ def successor(root,key):
     
     # min z prawego poddrzewa
     else:
-        node=node.right
-
-        prev=node.parent
-        while(node is not None):
-            prev=node
-            node=node.left
-        return prev
+        return get_min(node.right)
 
 
 # poprzednik
@@ -154,12 +148,7 @@ def predecessor(root,key):
 
     # max z lewego poddrzewa
     else:
-        node=node.left
-        prev=node.parent
-        while(node is not None):
-            prev=node
-            node=node.right
-        return prev
+        return get_max(node.left)
 
 
 
