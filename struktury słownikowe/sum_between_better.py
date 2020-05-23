@@ -17,8 +17,6 @@ ale to tyczy się tylko stałej ilości węzłów.
 '''
 
 
-from BST_tree_display import display_tree
-
 
 class Node:
     def __init__(self,key,value):
