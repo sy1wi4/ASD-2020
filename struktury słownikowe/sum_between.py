@@ -4,7 +4,7 @@ elementów w drzewie o wartościach z zakresu (x, y). W wyniku wykonanej modyfik
 również powinny zachować swoją pierwotną złożoność.Oczywiście należy również opisać jak będzie przebiegała operacja obliczania sumy.
 '''
 
-# ALGORYTM:
+# ALGORYTM:     //zakładam że w drzewie są węzły o kluczach x i y!!!
 '''
 Z każdym węźle trzymamy sumę prawego oraz lewego poddrzewa.
 Znajdujemy wspólnego roota dla x i y, a następnie "wspinamy się" do góry z x oraz z y.
