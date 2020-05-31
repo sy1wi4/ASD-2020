@@ -1,14 +1,5 @@
 '''
-Proszę  zaproponować  algorytm,  który  oblicza  sumę  wszystkich  wartości  w  drzewie  binarnym
-zdefiniowanym na węzłach typu:
-
-class BNode:
-    def __init__( self, value ):
-        self.left   = None
-        self.right  = None
-        self.parent = None
-        self.value  = val
-
+Proszę  zaproponować  algorytm,  który  oblicza  sumę  wszystkich  wartości  w  drzewie  binarnym.
 Można korzystać wyłącznie ze stałej ilości pamięci (ale wolno zmieniać strukturę drzewa, pod warunkiem,
 że po zakończonych obliczeniach drzewo zostanie przywrócone do stanu początkowego.)
 '''
@@ -20,6 +11,8 @@ w lewo.
 Kolejno próbujemy iść: z góry w lewo, następnie w prawo, potem w górę do rodzica.
 Powtarzamy dla każdego node'a, aż przejdziemy całe drzewo - warunkiem końca jest trzecie odwiedzenie roota.
 '''
+
+# algorytm działa dla każdego drzewa binarnego (niekoniecznie BST - tutaj tylko jako przykładowe)
 
 class Node:
     def __init__(self,key,value):
