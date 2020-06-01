@@ -23,6 +23,15 @@ class hash_table:
         self.size=size
         self.arr=[None]*self.size
 
+def print_table(h):
+    print("|",end=" ")
+    for i in range(5):
+        if h.arr[i] is None: print(None)
+        elif h.arr[i].state == 2: print(h.arr[i].key,h.arr[i].value, "r",end=" | ")
+        else:
+            print(h.arr[i].key,h.arr[i].value,end=" | ")
+            
+            
 def search(table,key):
     index=hash_func(key,table.size)
     cnt=1
@@ -57,3 +66,5 @@ def remove(table,key):
     index=search(table,key)
     if index is None: print("\nno key",key,"\n")
     else: table.arr[index].state=2
+
+        
