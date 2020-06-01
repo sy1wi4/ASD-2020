@@ -25,7 +25,7 @@ class hash_table:
 
 def print_table(h):
     print("|",end=" ")
-    for i in range(5):
+    for i in range(h.size):
         if h.arr[i] is None: print(None)
         elif h.arr[i].state == 2: print(h.arr[i].key,h.arr[i].value, "r",end=" | ")
         else:
