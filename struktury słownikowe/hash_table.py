@@ -32,7 +32,7 @@ def search(table,key):
             # kiedy trafimy na odpowiedni klucz i nie został od usunięty wcześniej,
             # tzn że go znaleźliśmy
             return index
-        index=(index+13*cnt)%table.size
+        index=(index+1)%table.size
         cnt+=1
     return None
 
@@ -40,15 +40,18 @@ def insert(table,key,value):
     index=hash_func(key,table.size)
     cnt=1   
     # kiedy licznik przekroczy n, przeszliśmy całą tablicę i nie znaleźliśmy miejsca - jest pełna
-    
-    #adresowanie otwarte
 
     while table.arr[index] is not None and table.arr[index].state == 1 and cnt<=table.size :
-        index=(index+cnt*13)%table.size      # bo 19 względnie pierwsze do rozmiaru tablicy
+        index=(index+1)%table.size      
+        if(key==0): print(index)
         cnt+=1
-    
-    to_insert=Node(key,value)
-    table.arr[index]=to_insert
+
+    print(index,key,value)
+    if cnt==table.size+1: 
+        print("table is full",key,value)
+    else:
+        to_insert=Node(key,value)
+        table.arr[index]=to_insert
 
 def remove(table,key):
     index=search(table,key)
