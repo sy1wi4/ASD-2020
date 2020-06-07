@@ -11,7 +11,7 @@ Aby to sprawdzić musimy dowiedzieć się, czy między pozycją liczby a jej has
 oznaczałoby, że mogliśmy tam wstawić tę liczbę - tablica jest niepoprawna.
 Tworzymy tablicę, która dla każdego indeksu i przechowuje indeks ostatniej -1 przed i w tablicy
 haszującej. Po wypełnieniu tej tablicy przechodzimy po tablicy haszującej, wyliczamy hash
-danej liczby i patrzymy czy między nim a naszą liczbą nie ma -1 
+danej liczby i patrzymy, czy między nim a naszą liczbą nie ma -1 
 
 '''
 
