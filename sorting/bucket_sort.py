@@ -7,7 +7,7 @@ def bucketSort(arr, n):
     buckets = [[] for _ in range(n)] 
     
     for i in arr:
-        # normalizacja: dzielimy elementy przez max, dzieki czemu wsystkie beda z przedzialu [0,1]
+        # normalizacja: dzielimy elementy przez max, dzieki czemu wszystkie beda z przedzialu [0,1]
         normNum = i/Max 
         bucketIdx = int((n-1) * normNum) # wybieram bucket
         buckets[bucketIdx].append(i)     # dodaje liczbe do bucketa
