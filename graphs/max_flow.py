@@ -6,6 +6,9 @@
 # to tak naprawdę algorytm Edmondsa-Karpa -> używa BFSa
 # do szukania ścieżek, lecz opiera się na metodzie Forda-Fulkersona
 
+# zakładamy, że w grafie nie istnieją krawędzie w dwie strony (każde 2 wierchołki łączy najwyżej 
+# jedna skierowana krawędź)
+
 # reprezentacja macierzowa grafu
 
 class graph:
