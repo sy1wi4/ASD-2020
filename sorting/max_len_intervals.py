@@ -8,8 +8,8 @@ przedział o maksymalnej długości.
 # ALGORYTM:
 '''
 Sortujemy przedziały po początkach, następnie dzielimy je na grupy przedziałów, których sumy są spójne.
-Następnie w każdej z grup rozważamy t-elementowe grupy (jeżeli grupa jest mniej liczna to bierzemy
-wszystkie) przedziałów leżacych obok siebie (gąsienicą od 0 do n-t). Jeżeli zazębiają sę wiecej niż 
+Następnie w każdej z grup rozważamy t przedziałów leżacych obok siebie (jeżeli grupa jest mniej liczna to 
+bierzemy wszystkie; gąsienicą od 0 do n-t). Jeżeli zazębiają sę wiecej niż 
 2 przedziały to dobieramy tylko ten kończący się najdalej (mamy pewność, że poprzedzające są w sumie
 krótsze). Gdy już weźmiemy t (lub mniej) przedziałów sprawdzamy jaką długość ma ich suma i jeżeli
 jest taka potrzeba, to aktualizujemy najdłuższą dotychczas znalezioną sumę i przedziały, które ją tworzą, 
