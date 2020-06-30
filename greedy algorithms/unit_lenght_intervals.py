@@ -14,3 +14,14 @@ niż x1+1. Kończymy wraz z dojściem do najdalszego punktu.
 '''
 
 # ZŁOŻONOŚĆ: O(n)  ( + O(nlogn)->jeżeli nieposortowane ) = O(nlogn)
+
+def intervals(arr):
+    arr.sort()
+    idx=0   
+    ctr=0   # licznik przedziałów jednostkowych
+    while idx < len(arr):
+        ctr+=1
+        current=idx     # początek danego przedziału jednostkowego
+        while idx < len(arr) and arr[idx] <= arr[current]+1:
+            idx += 1
+    return ctr
