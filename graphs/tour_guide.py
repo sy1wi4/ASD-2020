@@ -20,3 +20,79 @@ z A do B, po której może przejechać możliwie jak największa grupa turystów
 #    i nie biorąc pod uwagę krawędzi o mniejszej wadze, puszcam DFS i sprawdzam czy zdoła on 
 #    odwiedzić miasto B. Jeśli tak, to sprawdzam wartość będącą w połowie stawki powyżej wziętej
 #    poprzednio krawędzi, analogicznie jeśli nie - poniżej.
+
+
+
+# sposób nr 2 - korzystamy z algorytmu analogicznego do algorytmu Prima, tylko bierzemy krawędzi
+# o maksymalnych wagach
+
+# ponieważ korzystamy z kolejki priorytetowej o priorytecie min, to aby wyciągać krawędzi o 
+# maksymalnych wagach dokonujemy modyfikacji - wstawiamy do kolejki wagi przeciwne (minus)
+
+class Graph:
+    def __init__(self,size):
+        self.size=size
+        self.arr=[[i] for i in range(size)]
+
+    def add_edge(self,v,u,weight): # krawędź z v-u
+        self.arr[v].append((weight,u))
+        self.arr[u].append((weight,v))
+
+    def printG(self):
+        print("\n")
+        for i in self.arr:
+            for j in i:
+                print(j,end=" ")
+            print("\n")
+
+
+from queue import PriorityQueue 
+
+def MST_Prim(g,s):
+    q=PriorityQueue()
+    visited=[False]*g.size
+
+
+    # do kolejki wszystkie wierzchołki z wagą inf, startowy z wagą 0
+    for v in range(g.size):
+        if v != s: q.put((float("inf"),v))
+    q.put((0,s))
+
+    max_weight=[float("-inf")]*g.size
+    max_weight[s]=0
+    parents=[None]*g.size
+
+    while not q.empty() :
+        u=q.get()[1]
+        visited[u]=True     # oznaczam jako przetworzony
+
+        for v in g.arr[u][1:] :
+           if not visited[v[1]]:
+                # aktualizuję wagi
+                if v[0] != float("inf") and max_weight[v[1]] < v[0] :
+                    max_weight[v[1]] = v[0]
+                    parents[v[1]]=u 
+                    q.put((-1*v[0],v[1]))
+
+
+    return parents
+
+
+def tour_guide(arr,A,B):
+    g=Graph(5)
+    for edge in arr:
+        g.add_edge(edge[0],edge[1],edge[2])
+
+    # wyznaczamy maksymalne drzewo rozpinające
+    parents=MST_Prim(g,0)
+    
+    # najmniejsza z wag krawędzi z MST na ścieżce od B do A (idąc po parentach) to maksymalna wielkość grupy
+    # nas interesuje nas tylko sama ścieżka - łatwo ją wyznaczyć mając tablicę parentów
+
+    current=B
+    path=[B]
+    while current != A:
+        path.append(parents[current])
+        current=parents[current]
+
+    return path
