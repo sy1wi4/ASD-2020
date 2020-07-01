@@ -28,6 +28,7 @@ z A do B, po której może przejechać możliwie jak największa grupa turystów
 
 # ponieważ korzystamy z kolejki priorytetowej o priorytecie min, to aby wyciągać krawędzi o 
 # maksymalnych wagach dokonujemy modyfikacji - wstawiamy do kolejki wagi przeciwne (minus)
+# i ignorujemy wartości inf
 
 class Graph:
     def __init__(self,size):
