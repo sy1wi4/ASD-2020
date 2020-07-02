@@ -21,8 +21,8 @@ class Person:
         # f - najlepsza impreza w poddrzewie zacczepionym w employee
         # g - najlepsza impreza jezeli nie idzie na nia employee
 
-def f(person):          # najlepsza impreza
-    if person.f>=0 : return person.f    # mamy juz te informacje wiec nie musimy juz obliczac
+def f(person):          # najlepsza impreza - decyzja czy lepiej, kiedy person idzie czy nie
+    if person.f>=0 : return person.f    # mamy juz te informacje wiec nie musimy jej obliczac
     # person idzie na impreze - szukam max funu dla poddrzewa (na pewno jego podwladni bezposredni nie ida), czyli ta 
     # wartsoc to bedzie wartosc funu person + suma najlepszych imprez, na ktore nie ida jego podwladni (watrosc funkcji g)
     going=person.fun
