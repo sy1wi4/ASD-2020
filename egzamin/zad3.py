@@ -27,7 +27,6 @@ def ins_sort(tab):
 
 def fast_sort(tab, a):
     n=len(tab)
-    Max=a
     
     buckets = [[] for _ in range(n)] 
     
