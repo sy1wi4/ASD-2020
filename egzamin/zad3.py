@@ -52,5 +52,5 @@ def fast_sort(tab, a):
                 tab[idx]=buckets[i][j]
                 idx += 1
 
-    print("tab",tab)
+
     return tab
