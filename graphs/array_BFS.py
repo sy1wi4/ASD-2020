@@ -8,7 +8,7 @@ obliczający do ilu różnych pozycji może dojść gracz startując z zadanej p
 
 # ALGORYTM 
 '''
-Uruchamiamy algorytm BFS na tablicy.
+Uruchamiamy algorytm BFS na tablicy
 '''
 
 from collections import deque
