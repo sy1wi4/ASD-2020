@@ -28,16 +28,16 @@ def max_abs_val(a,b):
 
 def opt_sum(tab):
     # aby mieć na bieżąco dostęp do sumy w danym przedziale tworzymy sobie 
-    # pomocniczo tablicę sum prefixowych - wtedy suma [i,j] to pref[j+1] - pref[i]
+    # pomocniczo tablicę sum prefixowych - wtedy suma [i,j] to prefix[j+1] - prefix[i]
 
-    n=len(tab)
-    prefix=[None]*(n+1)
-    prefix[0]=0
+    n = len(tab)
+    prefix = [None]*(n+1)
+    prefix[0] = 0
     
     for i in range(1,n+1):
-        prefix[i]=prefix[i-1] + tab[i-1]
+        prefix[i] = prefix[i-1] + tab[i-1]
     
-    memo=[[0]*n for _ in range(n)]
+    memo = [[0]*n for _ in range(n)]
     # w memo[i][j] zapamiętujemy wartość sumy tymczasowej, której wartość bezwzględna
     # na danym przedziale jest minimalna (z maksymalnych)
 
