@@ -10,27 +10,26 @@ dla  tablicy wejściowej: [1,−5,2] funkcja powinna zwrócić wartość 3, co o
 
 
 
-# funckje zwracające liczbę o odpowiednio mniejszej/większej wartości bezwzględnej
-
-def min_abs_val(a,b):
-    if abs(a) < abs(b) : 
-        return a
-    else:
-        return b
-
-def max_abs_val(a,b):
-    if abs(a) > abs(b) : 
-        return a
-    else:
-        return b
-
-
-
 def opt_sum(tab):
+
+    # funkcje zwracające liczbę o odpowiednio mniejszej/większej wartości bezwzględnej
+
+    def min_abs_val(a,b):
+        if abs(a) < abs(b) : 
+            return a
+        else:
+            return b
+
+    def max_abs_val(a,b):
+        if abs(a) > abs(b) : 
+            return a
+        else:
+            return b
+
     # aby mieć na bieżąco dostęp do sumy w danym przedziale tworzymy sobie 
     # pomocniczo tablicę sum prefixowych - wtedy suma [i,j] to prefix[j+1] - prefix[i]
 
-    n = len(tab)
+    n=len(tab)
     prefix = [None]*(n+1)
     prefix[0] = 0
     
@@ -54,7 +53,7 @@ def opt_sum(tab):
 
             # dla każdego przedziału sprawdzamy, które 2 podprzedziały najlepiej
             # dodać do siebie (tak, by max suma tymczasowa była jak najmniejsza)
-            # k jest "punktem podziału", bierzemy przedziały [start][k] oraz [k+1][end]
+            # k jest "punktem podziału", bierzemy przedziały [start,k] oraz [k+1,end]
             
             best = float("inf")
             
