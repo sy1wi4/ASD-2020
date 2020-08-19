@@ -9,7 +9,7 @@ Zaczynamy z indeksami i na początku oraz j na końcu stringa. Jeśli obie liter
 podciągu o 1 i przesuwamy oba indeksy, jeśli nie, to przesuwamy indeks i lub j, w zależności, który bardziej sie opłaca. 
 '''
 
-
+# naiwne - wykładnicze
 def LPS(string,i,j):
     
     if i == j :
