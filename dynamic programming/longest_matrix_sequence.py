@@ -54,5 +54,50 @@ def longest_sequence(matrix) :
     return longest_path
 
 
-# algorytm dynamiczny :
-# TODO 
+# algorytm dynamiczny - ulepszenie algorytmu naiwnego polega na tym, że nie obliczamy wielokrotnie tego samego;
+# raz obliczoną długość dla danych i oraz j zapisujemy w tablicy i gdy następnym razem będzie ona potrzebna - po prostu 
+# korzystamy z niej
+
+# O(n^2)
+
+def longest_sequence_dynamic(matrix) :
+    
+    memo = [[1]*len(matrix) for _ in range(len(matrix))]
+
+    def longest_dynamic(matrix,i,j,memo) :
+        if not ok(i,j,matrix) :
+            return 0
+        
+        # jeśli istnieje sąsiad o wartości większej o 1, to zwiększamy długość aktualnej sekwencji o 1
+        elif memo[i][j] == 1 :
+            # up
+            if i-1 >= 0 and matrix[i-1][j] == matrix[i][j] + 1 :
+                memo[i][j] = 1 + longest_dynamic(matrix,i-1,j,memo) 
+            
+            # down
+            if i+1 < len(matrix) and matrix[i+1][j] == matrix[i][j] + 1 : 
+                memo[i][j] = 1 + longest_dynamic(matrix,i+1,j,memo) 
+
+            # right
+            if j+1 < len(matrix) and matrix[i][j+1] == matrix[i][j] + 1 :
+                memo[i][j] =  1 + longest_dynamic(matrix,i,j+1,memo)
+
+            # left
+            if j-1 >= 0 and matrix[i][j-1] == matrix[i][j] + 1 :
+                memo[i][j] = 1 + longest_dynamic(matrix,i,j-1,memo)
+
+        # nie ma sąsiada o wartości większej o 1
+        return memo[i][j]
+    
+    # sprawdzamy najdłuższe podciągi zaczynające się w każdej z możliwych komórek, zwracamy najdłuższą z nich
+    longest_path = 0
+
+    for i in range(len(matrix)) :
+        for j in range(len(matrix)) :
+            
+            cur_length = longest_dynamic(matrix,i,j,memo) 
+            if cur_length > longest_path :
+                longest_path = cur_length
+
+   
+    return longest_path
