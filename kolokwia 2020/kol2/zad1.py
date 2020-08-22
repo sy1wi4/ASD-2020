@@ -5,13 +5,12 @@ najdłuższej ścieżki prostej w tym drzewie. Drzewo reprezentowane jest za pom
 '''
 
 # ALGORYTM:
+
 '''
 Długość najdłuższej ścieżki prostej w drzewie zaczepionym w danym węźle to suma dwóch najdłuższych ścieżek
 idących w dół drzewa, chyba, że któraś z nich jest ujemna, to oczywiście jej nie bierzemy. Wynik końcowy 
 uzyskujemy rekurencyjnie zagłębiając się w drzewo i obliczając za każdym razem dwie najdłuższe ścieżki. 
 Dodatkowo przetrzymujemy długość najdłuższej do tej pory uzyskanej ścieżki. 
-
-
 '''
 
 class Node:
