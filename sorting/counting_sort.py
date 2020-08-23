@@ -1,6 +1,8 @@
 from random import randint
 
+
 # porządek rosnący
+
 def countingSort(arr):
     n = len(arr)   
     k = max(arr)
@@ -20,8 +22,9 @@ def countingSort(arr):
     return output
 
 
+
 # porządek malejący
-# malejąco
+
 def countingSort_descending(arr):
     n = len(arr)   
     k = max(arr)
