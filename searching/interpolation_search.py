@@ -1,4 +1,4 @@
-#wyszkukiwanie proporcjonalne(interpolacyjne)
+# wyszukiwanie proporcjonalne(interpolacyjne)
 
 
 def search(tab, x): 
