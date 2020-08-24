@@ -14,7 +14,7 @@ def bucketSort(arr, n):
     
     for i in range(n):
         buckets[i] = sorted(buckets[i])     
-        #sortuje obojetnie jaka metoda, bo liczba elementow jest stala
+        # sortowanie najlepiej insertion sortem!!!
     
     output = []
     
