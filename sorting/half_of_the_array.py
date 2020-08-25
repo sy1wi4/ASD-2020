@@ -6,7 +6,7 @@ czy w tablicy ponad połowa elementów ma jednakową wartość.'''
 
 def bucketSearch(arr,n):  # n-indeks ostatniego bucketa
 
-    f=False #flaga mowiaca czy znalezlismy wiece niz polowe elementow
+    f=False #flaga mowiaca czy znalezlismy wiecej niz polowe elementow
     x=(n+1)//2+1    #jesl w ktoryms buckecie bedzie x elementow to zwracam True
     
     Max=max(arr)
