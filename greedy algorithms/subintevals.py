@@ -36,7 +36,6 @@ def intervals(arr):
                 taken[idx]=False
             else:
                 heappush(h,(-1*Max,idx))
-                heappush(h,(-1*arr[i][1],i))
                 break
         # do kopca dodajemy koniec przedziału (na minusie) oraz indeks przedziału w tablicy, by łatwo usuwać
         heappush(h,(-1*arr[i][1],i))
