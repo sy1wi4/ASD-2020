@@ -10,13 +10,9 @@ jest stacja paliw; samochód może przejechać najwyżej odległość d bez tank
 '''
 Wykorzystujemy algorytm Floyda-Warshalla, by znaleźć najkrótsze ścieżki między stacjami, następnie na podstawie
 uzyskanej macierzy odległości zostawiamy tylko wierzchołki a i b oraz stacje i usuwamy krawędzi (najkrótsze ścieżki
-między danymi wierzchołkami wliczone uprzenio) o długości większej niż d, bo przez nie nie zdołamy przejechać. 
+między danymi wierzchołkami wliczone uprzednio) o długości większej niż d, bo przez nie nie zdołamy przejechać. 
 Następnie używamy jakiegoś algorytmu do wyznaczenia najkrótszej ścieżki od a do b, np. ponownie Floyda-Warschalla. 
 '''
-
-# TODO: zwracanie ścieżki !!!
-
-
 
 def floyd_warshall(g):
 
@@ -66,9 +62,8 @@ def floyd_warshall(g):
 def jak_dojade(G, P, d, a, b) :
 
     new_g, parents = floyd_warshall(G)
- 
-
-    # dla ułatwienia oznaczmy w których wierchołkach są stacje
+  
+    # dla ułatwienia oznaczmy w których wierzchołkach są stacje
     station=[False]*len(G)
     for i in range(len(P)):
         station[P[i]] = True
@@ -87,27 +82,45 @@ def jak_dojade(G, P, d, a, b) :
                     new_g[row][col] = -1
 
 
-    dist,parents = floyd_warshall(new_g)
+    dist,new_parents = floyd_warshall(new_g)
+    
     length = dist[a][b]
     
+    # pomocnicza funckja do odtwarzania ścieżki na podstawie macierzy rodziców
+    # uzyskanej po uruchomieniu algorytmu Floyda - Warshalla
 
-    
+    def create_path(path,u,v):
+        current_parent=parents[u][v]
+        last=v  # ostatni na rozważanej ścieżce
+        current_parent = parents[u][v]
+
+        while current_parent != u :
+            path.append(last)
+            last=current_parent
+            current_parent = parents[u][last]
+        path.append(last)
+        
+
+
     if length == float("inf") :
         return None
-
-    else :
-        
+    
+    else:
         # zwracamy ścieżkę
-        ''' ŹLE 
-        path = []
+        path=[]
 
-        current = b
+        cur_last = b
+        cur_parent = new_parents[a][b]
 
-        while current != a :
-            path.append(current)
-            current = parents[a][current]
+        while cur_parent != a :
+            create_path(path,cur_parent,cur_last)
+            cur_last = cur_parent
+            cur_parent = new_parents[a][cur_last]
         
+        create_path(path,a,cur_last)
+
         path.append(a)
         
-        return list(reversed(path))
-        '''
+        # mamy ścieżkę w odwróconej kolejności
+
+        return path[::-1]
