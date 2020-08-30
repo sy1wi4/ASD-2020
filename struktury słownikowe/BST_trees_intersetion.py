@@ -2,8 +2,7 @@
 Operacja intersection otrzymuje na wejściu dwa zbiory zrealizowane jako tablice asocjacyjne 
 i zwraca ich liczbę elementów, które występują w obu. Proszę zaimplementować tę operację dla 
 tablic asocjacyjnych realizowanych jako:
-1.  drzewa BST,
-że wszystkie podstawowe operacje na tych strukturach danych są już zaimplementowane.
+1.  drzewa BST
 '''
 
 # ALGORYTM:
