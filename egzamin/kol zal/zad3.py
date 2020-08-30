@@ -49,7 +49,7 @@ def longest_incomplete(A,k):
     
     longest=0       # najdłuższy ogółem
     start=0         # indeks początku danego podciągu
-    used=0          # ile unikalnnych elementów użyto
+    used=0          # ile unikalnych elementów użyto
     curr_idx=0      # aktualny indeks
     current_len=0   # długość aktualnie rozważanego podciągu
 
@@ -70,8 +70,7 @@ def longest_incomplete(A,k):
        
         if used == k :
             longest = max(longest,current_len-1)
-            print("licz",counter,"start",start,"used",used,"curr idx",curr_idx,"dlugosc",current_len-1)
-            print("kk")
+            
             start += 1
             curr_idx = start
             used = 0
