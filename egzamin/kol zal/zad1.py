@@ -11,7 +11,7 @@ jest stacja paliw; samochód może przejechać najwyżej odległość d bez tank
 Wykorzystujemy algorytm Floyda-Warshalla, by znaleźć najkrótsze ścieżki między stacjami, następnie na podstawie
 uzyskanej macierzy odległości zostawiamy tylko wierzchołki a i b oraz stacje i usuwamy krawędzi (najkrótsze ścieżki
 między danymi wierzchołkami wliczone uprzednio) o długości większej niż d, bo przez nie nie zdołamy przejechać. 
-Następnie używamy jakiegoś algorytmu do wyznaczenia najkrótszej ścieżki od a do b, np. ponownie Floyda-Warschalla. 
+Następnie używamy jakiegoś algorytmu do wyznaczenia najkrótszej ścieżki od a do b, np. ponownie Floyda-Warshalla. 
 '''
 
 def floyd_warshall(g):
