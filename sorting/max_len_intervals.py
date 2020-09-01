@@ -16,6 +16,8 @@ jest taka potrzeba, to aktualizujemy najdłuższą dotychczas znalezioną sumę 
 by móc je potem wypisać. 
 '''
 
+# niedokończona implementacja
+
 
 # funkcja tworząca grupy przedziałów, które w sumie są spójne
 def make_groups(arr):
