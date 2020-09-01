@@ -165,3 +165,35 @@ def get_max(root):
         prev=root
         root=root.right
     return prev.key
+
+
+# wypisuje klucze w porządku uporządkowanym
+def print_inorder(root):
+    if root is not None:
+        print_inorder(root.left)
+        print(root.key)
+        print_inorder(root.right)
+
+        
+def print_preorder(root):
+    if root is not None:
+        print(root.key)
+        print_preorder(root.left)
+        print_preorder(root.right)
+
+def print_postorder(root):
+    if root is not None:
+        print_postorder(root.left)
+        print_postorder(root.right)
+        print(root.key)
+
+
+
+# dostajemy klucze z drzewa (niezbalansowanego) w porządku posortowanym (in-order)
+arr=[]
+def inorder_to_array(root,arr):
+    if root is not None:
+        inorder_to_array(root.left,arr)
+        arr.append(root.key)
+        inorder_to_array(root.right,arr)
+    return arr
